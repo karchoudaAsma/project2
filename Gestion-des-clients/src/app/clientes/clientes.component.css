@@ -1,0 +1,242 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeInBody 1s ease-out;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.page-container {
+    width: 90%; /* Augmenter la largeur pour un tableau plus large */
+    max-width: 1400px; /* Largeur maximale du conteneur */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.centree {
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#table-wrapper {
+    margin-bottom: 20px;
+    overflow-x: auto; /* Pour le défilement horizontal si nécessaire */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 16px; /* Augmenter l'espace interne des cellules */
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px; /* Augmenter la taille de la police des cellules */
+}
+
+thead {
+    background-color: #07075c;
+    color: #fff;
+}
+
+thead th {
+    font-weight: bold;
+}
+
+tbody tr {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.3s;
+}
+
+td:last-child {
+    display: flex;
+    justify-content: space-around; /* Align buttons horizontally */
+    align-items: center;
+}
+
+.button-action {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color:#555;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 14px; /* Ajuster la taille de la police pour une meilleure visibilité */
+}
+
+.button-action:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.button-contracts {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: #ff7b07;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 14px; /* Ajuster la taille de la police pour une meilleure visibilité */
+}
+
+.button-contracts:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+.button-add {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-add:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    animation: fadeInModal 0.3s ease-out;
+}
+
+/* Enhanced CSS Styles for the Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 60%;
+    max-width: 600px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #333;
+    background: linear-gradient(135deg, #ff7b07, #ffcc00);
+    outline: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input::placeholder {
+    color: #fff;
+    opacity: 0.7;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#search-input:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffcc00, #ff7b07);
+}
+
+/* Animation on Input Field */
+#search-input:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status-section {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.details {
+    font-weight: bold;
+    color: #333;
+}
+

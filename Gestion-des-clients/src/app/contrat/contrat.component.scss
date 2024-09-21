@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: orange;
+    margin-top: 20px;
+}
+
+#contracts-wrapper {
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #444;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #222;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #333;
+}
+
+tbody tr:hover {
+    background-color: #555;
+    color: #ffcc00; /* Couleur du texte en surbrillance au survol */
+    transform: scale(1.02); /* Légère mise à l'échelle au survol */
+    transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
+}
+
+/* Style du formulaire */
+.form-container {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #ffcc00;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: white;
+}
+
+.form-buttons {
+    text-align: right;
+}
+
+.form-buttons .button-action {
+    margin-left: 10px;
+}
+
+.button-back {
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-back:hover {
+    background-color: darkorange;
+}
+
+.button-action {
+    padding: 5px 10px;
+    margin: 2px;
+    background-color: #777;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button-action:hover {
+    background-color: #999;
+}
+
+.button-action:active {
+    background-color: #555;
+}
+
+.add-button-wrapper {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button-add {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-add:hover {
+    background-color: #218838;
+}
+

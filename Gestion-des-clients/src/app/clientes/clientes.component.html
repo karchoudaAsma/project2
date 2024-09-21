@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Clients</title>
+    <link rel="stylesheet" href="clientes.component.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="centree">
+            <div class="container">
+                <div class="title">Gestion des Clients</div>
+                <div id="table-wrapper">
+<!-- Add search input above the table -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Rechercher..." (input)="filterClients($event)">
+</div>
+
+<div id="table-wrapper">
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Date de naissance</th>
+                <th>Num CIN</th>
+                <th>Code postal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of filteredClients">
+                <td>{{ client.nom }}</td>
+                <td>{{ client.prenom }}</td>
+                <td>{{ client.telephone }}</td>
+                <td>{{ client.adresse }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.dateNaissance | date: 'dd/MM/yyyy' }}</td>
+                <td>{{ client.numCIN }}</td>
+                <td>{{ client.codePostal }}</td>
+                <td>
+                    <button class="button-action" (click)="editClient(client)">Modifier</button>
+                    <button class="button-action" *ngIf="client._id" (click)="deleteClient(client._id)">Supprimer</button>
+                    <button>
+                        <b>
+                           <!--  <a class="button-contracts" [routerLink]="['/contrat']" href="contrat.component.html">CONTRATS</a>
+                         -->
+                        <a class="button-contracts" [routerLink]="['/contrat', client._id, client.nom]"  href="contrat.component.html">CONTRATS</a>
+
+                        
+                        </b>
+                    </button>
+                    <br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Bouton pour ajouter un client -->
+<div class="add-button-wrapper">
+    <button class="button-add" (click)="toggleAddClientForm()" >Ajouter un client</button>
+</div>
+
+<!-- Formulaire modal pour ajouter un client -->
+<div id="add-client-form" *ngIf="showAddClientForm"  class="form-container">
+    <h3>Ajouter un nouveau client</h3>
+    <form>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" [(ngModel)]="newClient.nom" placeholder="Entrez le nom" required>
+
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" [(ngModel)]="newClient.prenom" placeholder="Entrez le prénom" required>
+
+        <label for="telephone">Téléphone</label>
+        <input type="text" id="telephone" name="telephone" [(ngModel)]="newClient.telephone" placeholder="Entrez le téléphone">
+
+        <label for="adresse">Adresse</label>
+        <input type="text" id="adresse" name="adresse" [(ngModel)]="newClient.adresse" placeholder="Entrez l'adresse">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"pi [(ngModel)]="newClient.email" placeholder="Entrez l'email">
+
+        <label for="dateNaissance">Date de naissance</label>
+        <input type="date" id="dateNaissance" name="dateNaissance" [(ngModel)]="newClient.dateNaissance" placeholder="Entrez la date de naissance">
+
+        <label for="numCIN">Num CIN</label>
+        <input type="text" id="numCIN" name="numCIN" [(ngModel)]="newClient.numCIN" placeholder="Entrez le numéro CIN">
+
+        <label for="codePostal">Code postal</label>
+        <input type="text" id="codePostal" name="codePostal" [(ngModel)]="newClient.codePostal" placeholder="Entrez le code postal">
+
+        <div class="form-buttons">
+            <button type="button" class="button-action" (click)="saveClient()">Enregistrer</button>
+            <button type="button" class="button-action" (click)="cancel()" >Annuler</button>
+        </div>
+    </form>
+</div>
+                <div class="additional-sections">
+                   <br>
+                    <div id="status-wrapper" class="status-section">
+                        <span class="details">Statut: </span>
+                        <span id="status"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

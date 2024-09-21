@@ -1,0 +1,27 @@
+
+.orange-title {
+  color: rgb(212, 74, 10);
+  margin-top: 70px;
+  padding: 20px;
+  font-size: 40px;
+  text-align: center; /* Center text horizontally inside element */
+  display: block; /* Ensure it takes up the full width available */
+  margin: 0 auto; /* Center the element horizontally */
+  width: fit-content; /* Adjust the width to fit the content */
+}
+
+.styled-text {
+  font-size: 18px; /* Adjust this value as needed */
+  color: white;
+  text-align: center; /* Center the text horizontally */
+  margin: 30px auto; /* Center the text horizontally */
+  width: fit-content; /* Adjust the width to fit the content */
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text inside container */
+  padding: 40px; /* Optional: Adjust as needed */
+}
